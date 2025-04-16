@@ -49,9 +49,22 @@ public class Person {
         pets.add(pet);
     }
 
-    public void addSiblings(Person person) {
-//            will siblings toevoegen. Hoe.
-//        is broer of zus van person.
+    public void addSibling(Person sibling) {
+        if (this.mother != null) {
+            this.mother.addChild(sibling);
+        }
+        if (this.father != null) {
+            this.father.addChild(sibling);
+        }
+    }
+
+    public List<Person> getGrandChildren() {
+        List<Person> grandChildren = new ArrayList<>();
+
+        for(Person children : getChildren()) {
+            grandChildren.addAll(children.getChildren());
+        }
+        return grandChildren;
     }
 
     public String getName() {
