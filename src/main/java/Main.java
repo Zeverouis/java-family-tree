@@ -23,5 +23,7 @@ public class Main {
 
         System.out.println(Mary.getGrandChildren().getFirst().getName());
         System.out.println(Johan.getPets().get(0).getName());
+        System.out.println(Lulu.getMother().getName());
+        System.out.println(Alice.getChildren().get(0).getName());
     }
 }
